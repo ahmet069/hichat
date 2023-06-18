@@ -21,7 +21,7 @@ class _$AppRouter extends RootStackRouter {
       return CustomPage<dynamic>(
         routeData: routeData,
         child: const LoginView(),
-        transitionsBuilder: TransitionsBuilders.fadeIn,
+        transitionsBuilder: TransitionsBuilders.slideRight,
         opaque: true,
         barrierDismissible: false,
       );
@@ -30,7 +30,16 @@ class _$AppRouter extends RootStackRouter {
       return CustomPage<dynamic>(
         routeData: routeData,
         child: const SignUpView(),
-        transitionsBuilder: TransitionsBuilders.fadeIn,
+        transitionsBuilder: TransitionsBuilders.slideLeft,
+        opaque: true,
+        barrierDismissible: false,
+      );
+    },
+    ForgotPasswordRouter.name: (routeData) {
+      return CustomPage<dynamic>(
+        routeData: routeData,
+        child: const ForgotPasswordView(),
+        transitionsBuilder: TransitionsBuilders.slideRight,
         opaque: true,
         barrierDismissible: false,
       );
@@ -52,6 +61,10 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(
           SignUpRouter.name,
           path: '/SignUpView',
+        ),
+        RouteConfig(
+          ForgotPasswordRouter.name,
+          path: '/ForgotPasswordView',
         ),
       ];
 }
@@ -78,4 +91,16 @@ class SignUpRouter extends PageRouteInfo<void> {
         );
 
   static const String name = 'SignUpRouter';
+}
+
+/// generated route for
+/// [ForgotPasswordView]
+class ForgotPasswordRouter extends PageRouteInfo<void> {
+  const ForgotPasswordRouter()
+      : super(
+          ForgotPasswordRouter.name,
+          path: '/ForgotPasswordView',
+        );
+
+  static const String name = 'ForgotPasswordRouter';
 }
