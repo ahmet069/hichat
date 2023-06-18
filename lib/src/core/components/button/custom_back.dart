@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../../main.dart';
 import '../../constants/app_constants.dart';
 import '../../theme/color_tones.dart';
 
@@ -15,7 +16,9 @@ class CustomBackButton extends StatelessWidget {
     return Container(
       width: 1.sw,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () async {
+          router.navigateBack();
+        },
         style: ElevatedButton.styleFrom(backgroundColor: Colors.white, elevation: 0),
         child: Row(
           children: [
